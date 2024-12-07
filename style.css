@@ -1,0 +1,711 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+html, body {
+    height: 100%;
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin: 0; /* Remove margin from body */
+  }
+  
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.logo span{
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+.nav-container .links{
+    display: flex;
+}
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #077b32;
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+.nav-container .links a:hover{
+    color: #077b32;
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow:  0 0 20px black;
+    transition: 0.2s linear;
+}
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+.dropdown .links a:hover{
+    background-color: #077b32;
+}
+section{
+    width: 100%;
+    height: 90vh;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main-container .image{
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #077b32;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #5c984f;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Software Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Web Designer";
+    }
+}
+.main-container img {
+    max-width: 100%;
+    height: auto;
+    right: 0;
+}
+
+.main-container .image:hover{
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+.pic{
+    padding: 0%;
+ 
+}
+@keyframes animate {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.05;
+    }
+    100%{
+        scale: 1;
+    }
+}
+.main-container .content{
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+.content h1{
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+.content h1 span{
+    color: #077b32;
+    text-shadow: 0  0 10px #077b32;
+}
+.content .typewriter{
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 600;
+}
+.content .typewriter-text{
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+.content p{
+    font-size: clamp(0.4rem , 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #077b32;
+    border-radius: 50%;
+    color: #077b32;
+    margin: 5px 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+.social-links i:hover{
+    scale: 1.3;
+    color: black;
+    background-color: #077b32;
+    filter: drop-shadow(0 0 10px #077b32);
+}
+.content button{
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #077b32;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+.content button:hover{
+    scale: 1.1;
+    color: #077b32;
+    border: 2px solid #077b32;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px #077b32;
+}
+@media (max-width:884px) {
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-container .links{
+        display: none;
+    }
+    .hamburg,
+    .cancel{
+        display: block;
+    }
+    .main-container .content{
+        width: 80%;
+    }
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .main-container .image{
+        z-index: -1;
+        width: 50%;
+        height: 60%;
+   }
+}
+
+@media (max-width:481px){
+
+    .main-container .image .Responsive Image{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+    }
+    .main-container .content{
+        width: 80%;
+    }
+    .main-container button{
+        margin-top: 15px;
+    }
+    
+
+    }
+    /* Mobile Responsive Adjustments */
+    @media screen and (max-width: 768px) {
+        .content h1 {
+            font-size: 2.5rem;
+        }
+        .content p {
+            font-size: 1.2rem;
+        }
+        .nav-container .links a {
+            font-size: 1rem;
+            margin: 0 10px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: rgb(255, 249, 249);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words
+{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Web Designer";
+    }
+ }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+    
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  }
+/* Apply box-sizing globally to avoid padding/border overflow issues */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
+  }
+  
+  /* Body styling with black background */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for readability */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    height: auto; /* Allow the body to expand with content */
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    display: flex; /* Use flexbox to align sections vertically */
+    flex-direction: column; /* Stack sections vertically */
+    justify-content: flex-start; /* Align content at the top */
+    overflow-y: auto; /* Allow vertical scrolling when content overflows */
+  }
+  
+  /* Header and Navigation styling */
+  header {
+    padding: 20px;
+    flex-shrink: 0; /* Prevent the header from shrinking */
+  }
+  
+  /* About Me and Background Section */
+  #about-background {
+    background-color: #222; /* Dark background for section */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    flex-grow: 1; /* Allow this section to grow within the available space */
+    min-height: 300px; /* Set a minimum height for the section */
+    overflow: hidden; /* Hide any content that overflows this section */
+    text-align: center; /* Center the text */
+  }
+  
+  /* About Me Title and Text */
+  #about-background h1, #about-background h2 {
+    color: #fff; /* White text */
+    margin-bottom: 15px;
+    text-align: center; /* Center the title */
+  }
+  
+  /* Centered Paragraph */
+  #about-background p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ddd; /* Light grey text for readability */
+    text-align: center; /* Center the paragraph text */
+  }
+  
+  /* Centering the Content */
+#what-i-do {
+    text-align: center;  /* Center the title and paragraph */
+    margin: 40px auto;
+    max-width: 800px;  /* Optional, controls the width of the section */
+    padding: 20px;
+}
+
+/* Title Styling */
+#what-i-do h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #f0a500; /* Title color (gold) */
+}
+
+/* Paragraph Styling */
+#what-i-do .description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* List Styling */
+#what-i-do ul {
+    list-style-position: inside; /* Keeps the bullet points inside the list */
+    padding-left: 0; /* Removes the default left padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the list */
+    margin: 0; /* Optional, remove the default margin */
+}
+
+/* Individual List Item Styling */
+#what-i-do ul li {
+    text-align: left;  /* Aligns text inside the list items to the left */
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+    width: 100%; /* Ensures the list items take up the full width of the container */
+    padding-left: 20px; /* Adds padding to the left for the list items */
+    position: relative;
+}
+
+/* Adjust Bullet Styling */
+#what-i-do ul li::before {
+    content: "\2022"; /* Unicode for bullet */
+    font-size: 24px; /* Make the bullet bigger */
+    color: #f0a500; /* Color of the bullet */
+    position: absolute;
+    left: -30px; /* Position the bullet to the left of the list item */
+}
+
+
+/* Optional: Add a little hover effect on the list items */
+#what-i-do ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+  /* Ensure the page allows vertical scrolling */
+  html, body {
+    height: auto; /* Allow the page height to grow with content */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin: 0; /* Remove margin from body */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    /* Stack sections vertically for small screens */
+    section {
+      margin-top: 20px;
+      text-align: center; /* Center all text on small screens */
+    }
+  
+    .right-align {
+      text-align: center; /* Align the text to center on small screens */
+    }
+  
+    #what-i-do ul {
+      margin-left: 0; /* Remove left margin for the list */
+      padding-left: 0; /* Remove left padding for the list */
+    }
+  }
+  
+html {
+  scroll-behavior: smooth;
+}
+
+/* Services Section */
+#services {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.services-header h1 {
+    font-size: 36px;
+    color: #8add85;
+    margin-bottom: 20px;
+}
+
+.services-header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Service List */
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    background-color: #222;
+    padding: 30px;
+    margin: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h2 {
+    font-size: 24px;
+    color: #8add85;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    /* Larger tablets and smaller desktops */
+    .service-item {
+        width: 40%; /* Adjust item width for larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Medium tablets and smaller screens */
+    .service-item {
+        width: 45%; /* Adjust item width for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobile devices */
+    .service-item {
+        width: 90%; /* Take almost full width on mobile */
+        margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    .services-header h1 {
+        font-size: 28px; /* Smaller title for mobile */
+    }
+
+    .services-header p {
+        font-size: 16px; /* Smaller description for mobile */
+    }
+
+    footer {
+        position: static; /* Move footer back to static */
+    }
+}
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(145deg, #94cc95, #f0c0f9);
+    padding: 80px 0;
+}
+
+.contact-container {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Prevent overflow within the contact container */
+}
+
+.contact-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 3px;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 6px;
+    transition: border 0.3s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #b6e2a7;
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 8px;
+    background-color: #124102;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #c1ebc2;
+}
+/* Apply box-sizing globally to avoid padding/border overflow issues */
+.form-group{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
+  }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group button {
+        font-size: 1em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
